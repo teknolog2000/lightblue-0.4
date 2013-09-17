@@ -68,14 +68,15 @@ def formatdevaddr(addr):
     return addr.replace("-", ":").encode('ascii').upper()
     
 def createbtdevaddr(addr):
+    return btaddrtochars(addr)
     # in mac 10.5, can use BluetoothDeviceAddress directly
-    chars = btaddrtochars(addr)
-    try:
-        btdevaddr = _IOBluetooth.BluetoothDeviceAddress(chars)
-        return btdevaddr
-    except:
-        return chars
-    
+    #chars = btaddrtochars(addr)
+    #try:
+    #    btdevaddr = _IOBluetooth.BluetoothDeviceAddress(chars)
+    #    return btdevaddr
+    #except:
+    #    return chars
+
 def btaddrtochars(addr):   
     """
     Takes a bluetooth address and returns a tuple with the corresponding 
